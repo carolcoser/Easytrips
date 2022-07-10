@@ -1,0 +1,63 @@
+#navbar {
+    background-color: #fda403;
+}
+
+#navBuscar {
+    background-color: #e8751a;
+}
+
+#cabecalho {
+    background-color: #c51350;
+}
+
+#iconesCima {
+    color: #c51350;
+}
+
+#containerCard {
+    background-color: #e8751a;
+}
+
+#btnVoos {
+    text-align: center;
+    background-color: #c51350;
+}
+
+#carrosselCards {
+    background-color: #c51350;
+}
+
+.footer {
+    background-color: #8a1253;
+    color: white;
+    height: 12rem;
+}
+
+.list {
+    text-decoration: none;
+    color: rgb(161, 161, 161);
+}
+
+#italia {
+    height: 16rem;
+}
+
+#rj {
+    height: 16rem;
+}
+
+#fortaleza {
+    height: 16rem;
+}
+
+#tokyo {
+    height: 16rem;
+}
+
+#canyon {
+    height: 16rem;
+}
+
+#maceio {
+    height: 16rem;
+}

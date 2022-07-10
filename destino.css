@@ -1,0 +1,43 @@
+#navbar {
+    background-color: #fda403;
+}
+
+#navBuscar {
+    background-color: #e8751a;
+}
+
+#linha1 {
+    background-color: #c51350;
+}
+
+#linha2 {
+    background-color: #c51350;
+}
+
+.card-img-top {
+height: 12rem;
+}
+
+.card.pt-2 {
+    background-color: #fda403;
+}
+
+.card-title {
+    color: black;
+}
+
+.card-text {
+    color: black;
+}
+
+.footer {
+    background-color: #8a1253;
+    color: white;
+    height: 12rem;
+}
+
+.list {
+    text-decoration: none;
+    color: rgb(161, 161, 161);
+}
+

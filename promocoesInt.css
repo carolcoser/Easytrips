@@ -1,0 +1,27 @@
+#navbar {
+    background-color: #fda403;
+}
+
+#navBuscar {
+    background-color: #e8751a;
+}
+
+section {
+    background-color: #c51350;
+}
+
+.card-img-top {
+    height: 12rem;
+}
+
+
+.footer {
+    background-color: #8a1253;
+    color: white;
+    height: 12rem;
+}
+
+.list {
+    text-decoration: none;
+    color: rgb(161, 161, 161);
+}
