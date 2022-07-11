@@ -30,7 +30,7 @@
 .footer {
     background-color: #8a1253;
     color: white;
-    height: 12rem;
+    position: relative;
 }
 
 .list {
