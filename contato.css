@@ -1,18 +1,5 @@
 #navbar {
-    background-color: #fda403;
-}
-
-#navBuscar {
     background-color: #e8751a;
-}
-
-section {
-    background-color: #c51350;
-}
-
-#formulario {
-    height: 30rem;
-    background-color: #8a1253;
 }
 
 #buscar {
@@ -20,9 +7,11 @@ section {
 }
 
 .footer {
-    background-color: #8a1253;
+    background-color: #fda403;
     color: white;
-    position: relative;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
 }
 
 .list {

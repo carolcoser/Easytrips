@@ -1,5 +1,5 @@
 #navbar {
-    background-color: #fda403;
+    background-color: #e8751a;
 }
 
 #navBuscar {
@@ -7,11 +7,11 @@
 }
 
 #linha1 {
-    background-color: #c51350;
+    background-color: whitesmoke;
 }
 
 #linha2 {
-    background-color: #c51350;
+    background-color: whitesmoke;
 }
 
 .card-img-top {
@@ -31,7 +31,7 @@ height: 12rem;
 }
 
 .footer {
-    background-color: #8a1253;
+    background-color: #fda403;
     color: white;
     position: relative;
 }
