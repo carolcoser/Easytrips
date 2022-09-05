@@ -58,11 +58,10 @@ public class PacotesCRUD {
 
 			case 2:
 				for (PacotesViagem pct : pacoteDAO.getPacotes()) {
-					System.out.println("ID: " + pct.getId_pacote() + "Destino: " + pct.getDestino().getNomeDestino()
-							+ "Valor: " + pct.getValor_pacote() + "Saindo de: " + pct.getDestino().getCidade_origem()
-							+ "Hospedagem no hotel: " + pct.getHotel().getNome_hotel());
+					System.out.println("\nID Pacote: " + pct.getId_pacote() + "\nID Destino: " + pct.getDestino().getId_destino()
+							+ "\nValor: " + pct.getValor_pacote() + "\nID Hotel: " + pct.getHotel().getId_hotel());
 				}
-				System.out.println("Consulta finalizada!");
+				System.out.println(" Consulta finalizada! ");
 				break;
 
 			case 3:
@@ -80,7 +79,7 @@ public class PacotesCRUD {
 
 				PacotesViagem pct2 = new PacotesViagem(id_pacote, valorPacote, promo, hotel01, destino01);
 				pacoteDAO.update(pct2);
-				System.out.println("Informações atualizadas! " + pct2.getDestino());
+				System.out.println(" Informações atualizadas! " + pct2.getDestino());
 				break;
 
 			case 4:
@@ -95,18 +94,17 @@ public class PacotesCRUD {
 
 				PacotesViagem pct3 = pacoteDAO.getPacoteById(posicao);
 
-				System.out.println("ID: " + pct3.getId_pacote() + "Destino: " + pct3.getDestino().getNomeDestino()
-						+ "Valor: " + pct3.getValor_pacote() + "Saindo de: " + pct3.getDestino().getCidade_origem()
-						+ "Hospedagem no hotel: " + pct3.getHotel().getNome_hotel());
+				System.out.println("\nID Pacote: " + pct3.getId_pacote() + "\nID Destino: " + pct3.getDestino().getId_destino()
+						+ "\nValor: " + pct3.getValor_pacote() + "\nID Hotel: " + pct3.getHotel().getId_hotel());
 				break;
 
 			default:
-				System.out.println(oP != 0 ? "Opção inválida, digite novamente." : "");
+				System.out.println(oP != 0 ? " Opção inválida, digite novamente." : "");
 				break;
 			}
 		} while (oP != 0);
 
-		System.out.println("Finalizado.");
+		System.out.println(" Finalizado.");
 		in.close();
 	}
 

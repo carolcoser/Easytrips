@@ -17,7 +17,7 @@ public class DestinosDAO {
 	PreparedStatement pstm = null;
 
 	public void save(Destinos destino) {
-		String sql = "INSERT INTO destinos (pais, cidade_origem, data_ida, data_volta, nomeDestino) values (?, ?, ?, ?, ?);";
+		String sql = "INSERT INTO destinos (pais, cidade_origem, data_ida, data_volta, nomeDestino) values (?, ?, ?, ?, ?)";
 
 		try {
 			conn = ConnectionMySQL.createConnectionMySQL();
@@ -51,7 +51,7 @@ public class DestinosDAO {
 	}
 
 	public List<Destinos> getDestinos() {
-		String sql = "select * from destinos;";
+		String sql = "select * from destinos";
 
 		List<Destinos> listaDestinos = new ArrayList<>();
 		ResultSet rset = null;
@@ -97,8 +97,7 @@ public class DestinosDAO {
 	}
 
 	public void update(Destinos destino) {
-		String sql = "UPDATE destinos SET data_volta = ?, pais = ?, cidade_origem = ?, data_ida = ?, nomeDestino = ? "
-				+ "WHERE id_destino = ?;";
+		String sql = "UPDATE destinos SET data_volta = ?, pais = ?, cidade_origem = ?, data_ida = ?, nomeDestino = ? WHERE id_destino = ?";
 
 		try {
 			conn = ConnectionMySQL.createConnectionMySQL();

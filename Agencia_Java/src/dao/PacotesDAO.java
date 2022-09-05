@@ -19,7 +19,7 @@ public class PacotesDAO {
 	PreparedStatement pstm = null;
 
 	public void save(PacotesViagem pacote) {
-		String sql = "INSERT INTO pacotesviagem (valor_pacote, promo, id_hotel, id_destino) values (?, ?, ?, ?);";
+		String sql = "INSERT INTO pacotesviagem (valor_pacote, promo, id_hotel, id_destino) values (?, ?, ?, ?)";
 
 		try {
 			conn = ConnectionMySQL.createConnectionMySQL();
@@ -51,7 +51,7 @@ public class PacotesDAO {
 
 	//READ
 	public List<PacotesViagem> getPacotes(){
-		String sql = "select * from pacotesviagem;";
+		String sql = "select * from pacotesviagem";
 
 		List<PacotesViagem> listaPacotes = new ArrayList<>();
 		ResultSet rset = null;
@@ -69,13 +69,10 @@ public class PacotesDAO {
 				Destinos destino = new Destinos();
 
 				pacote.setId_pacote(rset.getInt("id_pacote"));
+				destino.setId_destino(rset.getInt("id_destino"));
+				hotel.setId_hotel(rset.getInt("id_hotel"));
 				pacote.setPromo(rset.getString("promo"));
 				pacote.setValor_pacote(rset.getDouble("valor_pacote"));
-				hotel.setNome_hotel(rset.getString("nome_hotel"));
-				hotel.setValor_diaria(rset.getDouble("valor_diaria"));
-				destino.setPais(rset.getString("pais"));
-				destino.setNomeDestino(rset.getString("nomeDestino"));
-				destino.setCidade_origem(rset.getString("cidade_origem"));
 				pacote.setHotel(hotel);
 				pacote.setDestino(destino);
 				listaPacotes.add(pacote);
@@ -103,16 +100,16 @@ public class PacotesDAO {
 
 	//UPDATE
 	public void update(PacotesViagem pacote) {
-		String sql = "UPDATE pacotesviagem SET valor_pacote, promo, id_hotel, id_destino WHERE id_pacote = ?;";
+		String sql = "UPDATE pacotesviagem SET id_destino = ?, id_hotel = ?, valor_pacote = ?, promo = ? WHERE id_pacote = ?";
 
 		try {
 	conn = ConnectionMySQL.createConnectionMySQL();
 	pstm = conn.prepareStatement(sql);
 
-	pstm.setDouble(1, pacote.getValor_pacote());
-	pstm.setString(2, pacote.getPromo());
-	pstm.setInt(3, pacote.getHotel().getId_hotel());
-	pstm.setInt(4, pacote.getDestino().getId_destino());
+	pstm.setInt(1, pacote.getDestino().getId_destino());
+	pstm.setInt(2, pacote.getHotel().getId_hotel());
+	pstm.setDouble(3, pacote.getValor_pacote());
+	pstm.setString(4, pacote.getPromo());
 	pstm.setInt(5, pacote.getId_pacote());
 
 	pstm.execute();
@@ -135,7 +132,7 @@ public class PacotesDAO {
 
 	//DELETE
 	public void deleteById(int id) {
-		String sql = "DELETE FROM pacotesviagem WHERE id_pacote = ?;";
+		String sql = "DELETE FROM pacotesviagem WHERE id_pacote = ?";
 
 		try {
 			conn = ConnectionMySQL.createConnectionMySQL();
@@ -163,9 +160,10 @@ public class PacotesDAO {
 
 	//BUSCAR POR ID
 	public PacotesViagem getPacoteById(int id) {
-		String sql = "select * from pacotesviagem WHERE id_pacote = ?;";
+		String sql = "select * from pacotesviagem WHERE id_pacote = ?";
 
 		PacotesViagem pacote = new PacotesViagem();
+		Hoteis hotel = new Hoteis();
 		Destinos destino = new Destinos();
 		ResultSet rset = null;
 
@@ -177,10 +175,12 @@ public class PacotesDAO {
 			rset = pstm.executeQuery();
 			rset.next();
 
-			pacote.setPromo(rset.getString("promo"));
-			pacote.setValor_pacote(rset.getDouble("valor_pacote"));
-			destino.setNomeDestino(rset.getString("nomeDestino"));
+			destino.setId_destino(rset.getInt("id_destino"));
 			pacote.setDestino(destino);
+			hotel.setId_hotel(rset.getInt("id_hotel"));
+			pacote.setHotel(hotel);
+			pacote.setValor_pacote(rset.getDouble("valor_pacote"));
+			pacote.setPromo(rset.getString("promo"));
 			pacote.setId_pacote(rset.getInt("id_pacote"));
 
 

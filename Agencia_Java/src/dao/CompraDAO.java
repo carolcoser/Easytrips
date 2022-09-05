@@ -19,7 +19,7 @@ public class CompraDAO {
 	PreparedStatement pstm = null;
 
 	public void save(Compra Compra) {
-		String sql = "INSERT INTO Compra (valor_itens, qtd_itens, dataCompra, valorCompra, id_pacote, id_cliente) values (?, ?, ?, ?, ?, ?);";
+		String sql = "INSERT INTO Compra (valor_itens, qtd_itens, dataCompra, valorCompra, id_pacote, id_cliente) values (?, ?, ?, ?, ?, ?)";
 
 		try {
 			conn = ConnectionMySQL.createConnectionMySQL();
@@ -105,7 +105,7 @@ public class CompraDAO {
 	}
 
 	public void update(Compra compra) {
-		String sql = "UPDATE Compra SET valor_itens = ?, qtd_itens = ?, dataCompra = ?, valorCompra = ?  WHERE id_Compra = ?;";
+		String sql = "UPDATE Compra SET valor_itens = ?, qtd_itens = ?, dataCompra = ?, valorCompra = ?  WHERE id_Compra = ?";
 
 		try {
 	conn = ConnectionMySQL.createConnectionMySQL();
@@ -140,7 +140,7 @@ public class CompraDAO {
 	}
 
 	public void deleteById(int id) {
-		String sql = "DELETE FROM Compra WHERE id_compra = ?;";
+		String sql = "DELETE FROM Compra WHERE id_compra = ?";
 
 		try {
 			conn = ConnectionMySQL.createConnectionMySQL();
@@ -166,7 +166,7 @@ public class CompraDAO {
 	}
 
 	public Compra getCompraById(int id) {
-		String sql = "select * from Compra WHERE id_compra = ?;";
+		String sql = "select * from Compra WHERE id_compra = ?";
 
 		Compra compra = new Compra();
 		Cliente cliente = new Cliente();

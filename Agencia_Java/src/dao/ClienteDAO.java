@@ -15,7 +15,7 @@ public class ClienteDAO {
 	PreparedStatement pstm = null;
 
 	public void save(Cliente cliente) {
-		String sql = "INSERT INTO cliente (emailCliente, nomeCliente, senhaCliente, cpfCliente, id_login) values (?, ?, ?, ?, ?);";
+		String sql = "INSERT INTO cliente (emailCliente, nomeCliente, senhaCliente, cpfCliente, id_login) values (?, ?, ?, ?, ?)";
 
 		try {
 			conn = ConnectionMySQL.createConnectionMySQL();
@@ -94,7 +94,7 @@ public class ClienteDAO {
 	}
 
 	public void update(Cliente cliente) {
-		String sql = "UPDATE cliente SET id_login = ?, emailCliente = ?, nomeCliente = ?, senhaCliente = ?, cpfCliente = ?  WHERE id_cliente = ?;";
+		String sql = "UPDATE cliente SET id_login = ?, emailCliente = ?, nomeCliente = ?, senhaCliente = ?, cpfCliente = ?  WHERE id_cliente = ?";
 
 		try {
 	conn = ConnectionMySQL.createConnectionMySQL();
@@ -126,7 +126,7 @@ public class ClienteDAO {
 	}
 
 	public void deleteById(int id) {
-		String sql = "DELETE FROM Cliente WHERE id_cliente = ?;";
+		String sql = "DELETE FROM Cliente WHERE id_cliente = ?";
 
 		try {
 			conn = ConnectionMySQL.createConnectionMySQL();
@@ -152,7 +152,7 @@ public class ClienteDAO {
 	}
 
 	public Cliente getClienteById(int id) {
-		String sql = "select * from Cliente WHERE id_cliente = ?;";
+		String sql = "select * from Cliente WHERE id_cliente = ?";
 
 		Cliente cliente = new Cliente();
 		ResultSet rset = null;

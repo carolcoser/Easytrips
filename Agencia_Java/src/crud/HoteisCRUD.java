@@ -33,13 +33,14 @@ public class HoteisCRUD {
 				//SAVE-CREATE
 				System.out.println("Digite o nome do hotel: ");
 				nome_hotel = in.next();
+				in.nextLine();
 				System.out.println("Digite o valor da diária: R$ ");
 				diaria = in.nextDouble();
-				in.next();
+				in.nextLine();
 				System.out.println("Café da manhã incluso?");
 				cafe = in.next();
 
-				Hoteis h1 = new Hoteis(id_hotel, nome_hotel, diaria, cafe);
+				Hoteis h1 = new Hoteis(id_hotel, cafe, diaria, nome_hotel);
 				hotelDAO.save(h1);
 				System.out.println("\n Cadastro realizado com sucesso! \n");
 				break;
@@ -47,24 +48,27 @@ public class HoteisCRUD {
 				//READ
 			case 2:
 				for (Hoteis h : hotelDAO.getHoteis()) {
-					System.out.println("ID: " + h.getId_hotel() + "Nome: " + h.getNome_hotel() + "Valor da diária: " + h.getValor_diaria()
-					+ "Café da manhã incluso?: " + h.getCafeDaManha());
+					System.out.println("\n ID: " + h.getId_hotel() + "\n Nome: " + h.getNome_hotel() + "\n Valor da diária: " + h.getValor_diaria()
+					+ "\n Café da manhã incluso?: " + h.getCafeDaManha());
 				}
-				System.out.println("Consulta finalizada!");
+				System.out.println("\n Consulta finalizada! \n ");
 				break;
 
 			case 3:
 				//UPDATE
 				System.out.println("Digite o ID do Hotel: ");
-				posicao = in.nextInt();
+				id_hotel = in.nextInt();
+				in.next();
 				System.out.println("Digite o nome do Hotel: ");
 				nome_hotel = in.next();
+				in.nextLine();
 				System.out.println("Digite o valor da diária: R$");
 				diaria = in.nextDouble();
+				in.nextLine();
 				System.out.println("Café da manhã incluso?: ");
-				cafe = in.next();
+				cafe = in.nextLine();
 
-				Hoteis h2 = new Hoteis(id_hotel, nome_hotel, diaria, cafe);
+				Hoteis h2 = new Hoteis(id_hotel, cafe, diaria, nome_hotel);
 				hotelDAO.update(h2);
 
 				System.out.println("Informações atualizadas! " + h2.getNome_hotel());

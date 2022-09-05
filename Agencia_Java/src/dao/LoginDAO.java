@@ -14,7 +14,7 @@ public class LoginDAO {
 	PreparedStatement pstm = null;
 
 	public void save(Login Login) {
-		String sql = "INSERT INTO login (tipoLogin) values (?);";
+		String sql = "INSERT INTO login (tipoLogin) values (?)";
 
 		try {
 			conn = ConnectionMySQL.createConnectionMySQL();
@@ -41,7 +41,7 @@ public class LoginDAO {
 	}
 
 	public List<Login> getLogin(){
-		String sql = "select * from login;";
+		String sql = "select * from login";
 
 		List<Login> listaLogin = new ArrayList<>();
 		ResultSet rset = null;
@@ -81,7 +81,7 @@ public class LoginDAO {
 	}
 
 	public void update(Login login) {
-		String sql = "UPDATE login SET tipoLogin = ? WHERE id_login = ?;";
+		String sql = "UPDATE login SET tipoLogin = ? WHERE id_login = ?";
 
 		try {
 	conn = ConnectionMySQL.createConnectionMySQL();
@@ -109,7 +109,7 @@ public class LoginDAO {
 	}
 
 	public void deleteById(int id) {
-		String sql = "DELETE FROM login WHERE id_login = ?;";
+		String sql = "DELETE FROM login WHERE id_login = ?";
 
 		try {
 			conn = ConnectionMySQL.createConnectionMySQL();
@@ -135,7 +135,7 @@ public class LoginDAO {
 	}
 
 	public Login getLoginById(int id) {
-		String sql = "select * from login WHERE id_login = ?;";
+		String sql = "select * from login WHERE id_login = ?";
 
 		Login login = new Login();
 		ResultSet rset = null;

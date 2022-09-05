@@ -22,14 +22,14 @@ public class Principal {
 		//Destinos dest2 = new Destinos (0, "Brasil", "São Paulo", "10/09/2022", "20/09/2022", "Londres");
 		//Destinos dest3 = new Destinos (0, "Brasil", "Curitiba", "12/10/2022", "20/10/2022", "São Paulo");
 		//destDAO.save(dest3);
-		// SAVE, DELETE E LISTAR - OK
+	
 		
 		LoginDAO logDAO = new LoginDAO();
 		Login log1 = new Login (0, "Administrador");
 		//Login log2 = new Login (0, "Usuário");
 		//Login log4 = new Login (2, "Usuário");
 		logDAO.update(log1);
-		//SAVE, LISTAR E DELETE OK
+		
 		
 		//logDAO.save(log1);
 		

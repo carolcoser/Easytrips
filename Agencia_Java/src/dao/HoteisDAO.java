@@ -14,7 +14,7 @@ public class HoteisDAO {
 	PreparedStatement pstm = null;
 
 	public void save(Hoteis hoteis) {
-		String sql = "INSERT INTO hoteis (cafeDaManha, valor_diaria, nome_hotel) values (?, ?, ?);";
+		String sql = "INSERT INTO hoteis (cafeDaManha, valor_diaria, nome_hotel) values (?, ?, ?)";
 
 		try {
 			conn = ConnectionMySQL.createConnectionMySQL();
@@ -43,7 +43,7 @@ public class HoteisDAO {
 	}
 
 	public List<Hoteis> getHoteis(){
-		String sql = "select * from hoteis;";
+		String sql = "select * from hoteis";
 
 		List<Hoteis> listaHoteis = new ArrayList<>();
 		ResultSet rset = null;
@@ -86,7 +86,7 @@ public class HoteisDAO {
 	}
 
 	public void update(Hoteis hotel) {
-		String sql = "UPDATE hoteis SET nome_hotel = ?, valor_diaria = ?, cafeDaManha = ? WHERE id_hotel = ?;";
+		String sql = "UPDATE hoteis SET nome_hotel = ?, valor_diaria = ?, cafeDaManha = ? WHERE id_hotel = ?";
 
 		try {
 	conn = ConnectionMySQL.createConnectionMySQL();
@@ -117,7 +117,7 @@ public class HoteisDAO {
 	}
 
 	public void deleteById(int id) {
-		String sql = "DELETE FROM hoteis WHERE id_hotel = ?;";
+		String sql = "DELETE FROM hoteis WHERE id_hotel = ?";
 
 		try {
 			conn = ConnectionMySQL.createConnectionMySQL();
@@ -143,7 +143,7 @@ public class HoteisDAO {
 	}
 
 	public Hoteis getHotelById(int id) {
-		String sql = "select * from hoteis WHERE id_hotel = ?;";
+		String sql = "select * from hoteis WHERE id_hotel = ?";
 
 		Hoteis hotel = new Hoteis();
 		ResultSet rset = null;
