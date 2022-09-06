@@ -105,7 +105,7 @@ public class CompraDAO {
 	}
 
 	public void update(Compra compra) {
-		String sql = "UPDATE Compra SET valor_itens = ?, qtd_itens = ?, dataCompra = ?, valorCompra = ?  WHERE id_Compra = ?";
+		String sql = "UPDATE Compra SET valor_itens = ?, qtd_itens = ?, dataCompra = ?, valorCompra = ?, id_pacote = ?, id_cliente = ?  WHERE id_compra = ?";
 
 		try {
 	conn = ConnectionMySQL.createConnectionMySQL();
@@ -120,6 +120,7 @@ public class CompraDAO {
 	pstm.setDouble(4, compra.getValorCompra());
 	pstm.setInt(5, compra.getPacotes().getId_pacote());
 	pstm.setInt(6, compra.getCliente().getId_cliente());
+	pstm.setInt(7. compra.getId_compra());
 	
 	pstm.execute();
 
