@@ -56,3 +56,9 @@ ALTER TABLE Cliente ADD FOREIGN KEY(id_login) REFERENCES Login (id_login);
 ALTER TABLE PacotesViagem ADD FOREIGN KEY(id_destino) REFERENCES Destinos (id_destino);
 ALTER TABLE Destinos ADD nomeDestino VARCHAR(50);
 
+create view cliente_login as 
+select
+c.*,
+l.id_login as login,
+l.tipoLogin from cliente c , login l where c.id_login = l.id_login;
+
