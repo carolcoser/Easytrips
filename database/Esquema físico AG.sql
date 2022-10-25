@@ -56,3 +56,35 @@ ALTER TABLE Cliente ADD FOREIGN KEY(id_login) REFERENCES Login (id_login);
 ALTER TABLE PacotesViagem ADD FOREIGN KEY(id_destino) REFERENCES Destinos (id_destino);
 ALTER TABLE Destinos ADD nomeDestino VARCHAR(50);
 
+create view cliente_login as 
+select
+c.*,
+l.id_login as login,
+l.tipoLogin
+from 
+cliente c, 
+login l 
+where c.id_login = l.id_login;
+
+create view info_compra as
+select
+id_compra, dataCompra, qtd_itens, valorCompra, c.id_cliente, pct.id_pacote
+from
+compra cp,
+cliente c,
+pacotesviagem pct
+where
+cp.id_cliente = c.id_cliente
+and cp.id_pacote = pct.id_pacote;
+
+create view info_pacote as
+select
+id_pacote, d.id_destino, h.id_hotel, valor_pacote, promo
+from
+pacotesviagem pct,
+destinos d,
+hoteis h
+where
+pct.id_destino = d.id_destino
+and pct.id_hotel = h.id_hotel;
+
