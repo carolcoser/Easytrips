@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+	<title>Cadastrar novo destino</title>
+</head>
+
+<body>
+	<header class="header">
+			<h1 class="text-center" style=background-color:#FFA500>
+				<img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-trip-vacation-planning-flaticons-lineal-color-flat-icons.png"/>Easytrips
+			</h1>
+		</header>
+
+		<ul class="nav justify-content-center">
+			<li class="nav-item"><a class="nav-link active"
+				aria-current="page" href="/">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/clientes">Clientes</a>
+			</li>
+			<li class="nav-item"><a class="nav-link" href="/compras">Compras</a></li>
+			<li class="nav-item"><a class="nav-link" href="/destinos">Destinos</a></li>
+			<li class="nav-item"><a class="nav-link" href="/hoteis">Hotéis</a></li>
+			<li class="nav-item"><a class="nav-link" href="/login">Permissões/Login</a>
+			</li>
+			<li class="nav-item"><a class="nav-link" href="/pacotes">Pacotes de
+					Viagem</a></li>
+		</ul>
+
+	<main class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h1>Cadastrar novo destino</h1>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<form method="POST" th:object="${destinos}" enctype="multipart/form-data">
+					<div class="mb-3">
+						<label for="nomeDestino" class="form-label">Nome do destino</label>
+						<input type="text" class="form-control" id="nomeDestino" th:field="*{nomeDestino}">
+					</div>
+					<div class="mb-3">
+						<label for="pais" class="form-label">País</label>
+						<input type="text" class="form-control" id="pais" th:field="*{pais}">
+					</div>
+					<div class="mb-3">
+						<label for="cidade_origem" class="form-label">Cidade</label>
+						<input type="text" class="form-control" id="cidade_origem" th:field="*{cidade_origem}">
+					</div>
+					<div class="mb-3">
+						<label for="data_ida" class="form-label">Data da ida</label>
+						<input type="date" class="form-control" id="data_ida" th:field="*{data_ida}">
+					</div>
+					<div class="mb-3">
+						<label for="data_volta" class="form-label">Data da volta</label>
+						<input type="date" class="form-control" id="data_volta" th:field="*{data_volta}">
+					</div>
+					<br>
+					<button type="submit" class="btn btn-primary">Salvar</button>
+				</form>
+			</div>
+		</div>
+	</main>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>

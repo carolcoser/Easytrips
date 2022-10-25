@@ -1,0 +1,129 @@
+#navbar {
+    background-color: #e8751a;
+}
+
+#navBuscar {
+    background-color: #e8751a;
+}
+
+#cabecalho {
+    background-color: whitesmoke;
+}
+
+#iconesCima {
+    color: #c51350;
+}
+
+#containerCard {
+    background-color: #fda403;
+}
+
+#btnVoos {
+    text-align: center;
+    background-color: whitesmoke;
+}
+
+#carrosselCards {
+    background-color: whitesmoke;
+}
+
+.footer {
+    background-color: #fda403;
+    color: white;
+    position: relative;
+}
+
+.list {
+    text-decoration: none;
+    color: rgb(161, 161, 161);
+}
+
+#italia {
+    height: 16rem;
+}
+
+#rj {
+    height: 16rem;
+}
+
+#fortaleza {
+    height: 16rem;
+}
+
+#tokyo {
+    height: 16rem;
+}
+
+#canyon {
+    height: 16rem;
+}
+
+#maceio {
+    height: 16rem;
+}
+
+.section {
+    background-color: whitesmoke;
+    width: 100%;
+}
+
+.card-img-top {
+    height: 12rem;
+    }
+
+.btn {
+    justify-content: center;
+}
+
+#sub{
+    background-color: #e8751a;
+}
+
+#btnCadastro{
+    background-color: #e8751a;
+}
+
+/*CSS Destinos*/
+#linha1 {
+    background-color: whitesmoke;
+}
+
+#linha2 {
+    background-color: whitesmoke;
+}
+
+.card.pt-2 {
+    background-color: #fda403;
+}
+
+.card-title {
+    color: black;
+}
+
+.card-text {
+    color: black;
+}
+/*CSS Contato*/
+#buscar {
+    background-color: #e8751a;
+}
+
+#footerContato {
+    background-color: #fda403;
+    color: white;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+}
+
+#fundoForm {
+    width: 100%;
+}
+
+#footerCadastro {
+    background-color: #fda403;
+    color: white;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+}
